@@ -33,3 +33,16 @@ first_name varchar(100),
 last_name varchar(100),
 name varchar(200) as (concat_ws(' ',first_name,last_name))
 );
+create table books
+(
+ISBN char(10) not null primary key,
+title varchar(30)
+);
+
+create table book_instance
+(
+acc_no varchar(20) not null primary key,
+is_issued varchar(40),
+issued_by varchar(40),
+status varchar(80) as (concat_ws(' ',is_issued,issued_by))
+);
