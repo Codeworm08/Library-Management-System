@@ -12,7 +12,7 @@ class Database:
     def __init__(self) -> None:
         self.connection = pymysql.connect(host='localhost',
                             user='Leo',
-                            password='StAr6hi#oR7',
+                            password='****3',
                             database='ASS1',
                             cursorclass=pymysql.cursors.DictCursor)
     def showDesigCode(self):
