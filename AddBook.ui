@@ -13,12 +13,12 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QDialogButtonBox" name="book_button">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>380</x>
      <y>230</y>
-     <width>341</width>
+     <width>211</width>
      <height>32</height>
     </rect>
    </property>
@@ -29,7 +29,10 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelISBN">
+<<<<<<< HEAD
+=======
+  <widget class="QLabel" name="label_ISBN">
+>>>>>>> 5e4f0283e948f322ce126c89b33be8830aa635e7
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -42,7 +45,10 @@
     <string>ISBN</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelTITLE">
+<<<<<<< HEAD
+=======
+  <widget class="QLabel" name="label_TITLE">
+>>>>>>> 5e4f0283e948f322ce126c89b33be8830aa635e7
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -79,7 +85,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>book_button</sender>
    <signal>accepted()</signal>
    <receiver>AddBook</receiver>
    <slot>accept()</slot>
@@ -95,7 +101,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>book_button</sender>
    <signal>rejected()</signal>
    <receiver>AddBook</receiver>
    <slot>reject()</slot>

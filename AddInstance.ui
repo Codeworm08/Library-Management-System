@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QDialogButtonBox" name="instance_button">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -29,7 +29,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_acc_no">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -42,7 +42,7 @@
     <string>acc_no</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label_is_issued">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -55,7 +55,7 @@
     <string>is_issued</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="label_issued_by">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -68,7 +68,7 @@
     <string>issued_by</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="acc_no">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -78,7 +78,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="is_issued">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -88,7 +88,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="issued_by">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -102,7 +102,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>instance_button</sender>
    <signal>accepted()</signal>
    <receiver>AddInstance</receiver>
    <slot>accept()</slot>
@@ -118,7 +118,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBox</sender>
+   <sender>instance_button</sender>
    <signal>rejected()</signal>
    <receiver>AddInstance</receiver>
    <slot>reject()</slot>
