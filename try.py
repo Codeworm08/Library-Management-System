@@ -2,12 +2,15 @@ import pymysql.cursors
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-class MyGUI(QDialog):
+from Member import *
+class MainWin(QMainWindow):
     def __init__(self):
-        super(MyGUI, self).__init__()
-        uic.loadUi("AddMember.ui",self)
-        self.show()
-
+        super(MainWin, self).__init__()
+        uic.loadUi("MainWindow.ui", self)
+        self.AddMember.clicked.connect(self.executeAddMemDialog)
+    def executeAddMemDialog(self):
+        addMem = AddMem()
+        addMem.exec_()
 class Database:
     def __init__(self) -> None:
         self.connection = pymysql.connect(host='localhost',
@@ -23,9 +26,11 @@ class Database:
                 result = cursor.fetchall()
                 return result
 def main():
-    app = QApplication([])
-    dialog = MyGUI()
-    app.exec_()
+    app = QApplication(sys.argv)
+    widget = MainWin()
+    widget.show()
+    sys.exit(app.exec_())
+    
 
 if __name__=='__main__':
     main()
