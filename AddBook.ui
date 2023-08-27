@@ -29,10 +29,8 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-<<<<<<< HEAD
-=======
+
   <widget class="QLabel" name="label_ISBN">
->>>>>>> 5e4f0283e948f322ce126c89b33be8830aa635e7
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -45,10 +43,8 @@
     <string>ISBN</string>
    </property>
   </widget>
-<<<<<<< HEAD
-=======
+
   <widget class="QLabel" name="label_TITLE">
->>>>>>> 5e4f0283e948f322ce126c89b33be8830aa635e7
    <property name="geometry">
     <rect>
      <x>290</x>

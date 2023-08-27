@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import pymysql.cursors
+import dbconnection
 class AddMem(QDialog):
     def __init__(self):
         super(AddMem, self).__init__()
@@ -26,4 +27,31 @@ class AddMem(QDialog):
                 sql = "INSERT INTO members (`memberid`,`street`,`city`,`state`,`pin_code`,`first_name`,`last_name`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
                 cursor.execute(sql,(mid,street,city,state,pin,first_name,last_name))
                 connection.commit()
+class ShowMems(QDialog):
+    def __init__(self):
+        super(ShowMems, self).__init__()
+        uic.loadUi("TableMember.ui",self)
+        self.show()
+        self.load.clicked.connect(self.loadData)
+    def loadData(self):
+        print("Hello")
+        connection = pymysql.connect(host='localhost',
+                            user='Leo',
+                            password='StAr6hi#oR7',
+                            database='LIBRARY',
+                            cursorclass=pymysql.cursors.DictCursor)
+        cursor=connection.cursor()
+        cursor.execute("SELECT * FROM members")
+        result=cursor.fetchall()
+        print(result)
+        self.tableWidget.setRowCount(0)
+        for row in result:
+            row_number = self.tableWidget.rowCount()
+            self.tableWidget.insertRow(row_number)
+            for cn,data in enumerate(row):
+                print(row_number,cn,row[data])
+                self.tableWidget.setItem(row_number,cn,QTableWidgetItem(str(row[data])))
+        
+        
+        
 
