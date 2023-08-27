@@ -17,11 +17,7 @@ class AddMem(QDialog):
         last_name=self.LName.text()
         state = self.State.text()
         pin = self.PinCode.text()
-        connection = pymysql.connect(host='localhost',
-                            user='Leo',
-                            password='StAr6hi#oR7',
-                            database='LIBRARY',
-                            cursorclass=pymysql.cursors.DictCursor)
+        connection = dbconnection.connection
         with connection:
             with connection.cursor() as cursor:
                 sql = "INSERT INTO members (`memberid`,`street`,`city`,`state`,`pin_code`,`first_name`,`last_name`) VALUES (%s,%s,%s,%s,%s,%s,%s)"
@@ -35,11 +31,7 @@ class ShowMems(QDialog):
         self.load.clicked.connect(self.loadData)
     def loadData(self):
         print("Hello")
-        connection = pymysql.connect(host='localhost',
-                            user='Leo',
-                            password='StAr6hi#oR7',
-                            database='LIBRARY',
-                            cursorclass=pymysql.cursors.DictCursor)
+        connection = dbconnection.connection
         cursor=connection.cursor()
         cursor.execute("SELECT * FROM members")
         result=cursor.fetchall()
