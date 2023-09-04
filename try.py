@@ -14,6 +14,7 @@ class MainWin(QMainWindow):
         self.AddBook.clicked.connect(self.executeAdd_BDialog)
         self.AddInstance.clicked.connect(self.executeAdd_InstanceDialog)
         self.ViewMembers.clicked.connect(self.executeViewMemDialog)
+        self.UpdateMember.clicked.connect(self.executeUpdateMemDialog)
 
     def executeAdd_InstanceDialog(self):
         instance = Add_Instance()
@@ -27,7 +28,9 @@ class MainWin(QMainWindow):
     def executeViewMemDialog(self):
         viewMem = ShowMems()
         viewMem.exec_()
-        
+    def executeUpdateMemDialog(self):
+        updateMem =UpdateMems()
+        updateMem.exec_()
 
 def main():
     app = QApplication(sys.argv)
